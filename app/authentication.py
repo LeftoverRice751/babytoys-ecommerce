@@ -59,7 +59,9 @@ def login():
     access_token = create_access_token(identity=username)
     return jsonify(access_token=access_token)
 
-#Protected route para di mabuntis
+#Protected route para kapag nagbigay si user ng tamang information,
+#mabibigyan siya ng access token para makuha niya yung protected data niya
+#galing tangina
 @app.route('/protected', methods=['GET'])
 @jwt_required()
 def protected():
